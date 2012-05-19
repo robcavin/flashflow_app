@@ -18,6 +18,10 @@
 		95F0F8F41550F4FC00276F9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F0F8DB1550F4FC00276F9D /* Foundation.framework */; };
 		95F0F8FC1550F4FC00276F9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95F0F8FA1550F4FC00276F9D /* InfoPlist.strings */; };
 		95F0F8FF1550F4FC00276F9D /* FlashFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0F8FE1550F4FC00276F9D /* FlashFlowTests.m */; };
+		95F0F9091550F52B00276F9D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F0F9081550F52B00276F9D /* Storyboard.storyboard */; };
+		95F0F90E1550F8FA00276F9D /* FFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0F90D1550F8FA00276F9D /* FFMainViewController.m */; };
+		95F0F9111550FC4B00276F9D /* BBJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0F9101550FC4B00276F9D /* BBJLocationManager.m */; };
+		95F0F93D1551121B00276F9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F0F93C1551121B00276F9D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +39,24 @@
 		95F0F8D91550F4FC00276F9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95F0F8DB1550F4FC00276F9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95F0F8DD1550F4FC00276F9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		95F0F8E11550F4FC00276F9D /* FlashFlow-Info.plist */ = {isa = PBXFileReference; path = "FlashFlow-Info.plist"; sourceTree = "<group>"; };
+		95F0F8E11550F4FC00276F9D /* FlashFlow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashFlow-Info.plist"; sourceTree = "<group>"; };
 		95F0F8E31550F4FC00276F9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95F0F8E51550F4FC00276F9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		95F0F8E71550F4FC00276F9D /* FlashFlow-Prefix.pch */ = {isa = PBXFileReference; path = "FlashFlow-Prefix.pch"; sourceTree = "<group>"; };
-		95F0F8E81550F4FC00276F9D /* BBJAppDelegate.h */ = {isa = PBXFileReference; path = BBJAppDelegate.h; sourceTree = "<group>"; };
+		95F0F8E71550F4FC00276F9D /* FlashFlow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlashFlow-Prefix.pch"; sourceTree = "<group>"; };
+		95F0F8E81550F4FC00276F9D /* BBJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBJAppDelegate.h; sourceTree = "<group>"; };
 		95F0F8E91550F4FC00276F9D /* BBJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBJAppDelegate.m; sourceTree = "<group>"; };
 		95F0F8F01550F4FC00276F9D /* FlashFlowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashFlowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F0F8F11550F4FC00276F9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		95F0F8F91550F4FC00276F9D /* FlashFlowTests-Info.plist */ = {isa = PBXFileReference; path = "FlashFlowTests-Info.plist"; sourceTree = "<group>"; };
+		95F0F8F91550F4FC00276F9D /* FlashFlowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashFlowTests-Info.plist"; sourceTree = "<group>"; };
 		95F0F8FB1550F4FC00276F9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		95F0F8FD1550F4FC00276F9D /* FlashFlowTests.h */ = {isa = PBXFileReference; path = FlashFlowTests.h; sourceTree = "<group>"; };
+		95F0F8FD1550F4FC00276F9D /* FlashFlowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashFlowTests.h; sourceTree = "<group>"; };
 		95F0F8FE1550F4FC00276F9D /* FlashFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashFlowTests.m; sourceTree = "<group>"; };
+		95F0F9081550F52B00276F9D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		95F0F90C1550F8FA00276F9D /* FFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMainViewController.h; sourceTree = "<group>"; };
+		95F0F90D1550F8FA00276F9D /* FFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMainViewController.m; sourceTree = "<group>"; };
+		95F0F90F1550FC4B00276F9D /* BBJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBJLocationManager.h; sourceTree = "<group>"; };
+		95F0F9101550FC4B00276F9D /* BBJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBJLocationManager.m; sourceTree = "<group>"; };
+		95F0F93C1551121B00276F9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F0F93D1551121B00276F9D /* CoreLocation.framework in Frameworks */,
 				95F0F8DA1550F4FC00276F9D /* UIKit.framework in Frameworks */,
 				95F0F8DC1550F4FC00276F9D /* Foundation.framework in Frameworks */,
 				95F0F8DE1550F4FC00276F9D /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +87,7 @@
 		95F0F8CA1550F4FC00276F9D = {
 			isa = PBXGroup;
 			children = (
+				95F0F93C1551121B00276F9D /* CoreLocation.framework */,
 				95F0F8DF1550F4FC00276F9D /* FlashFlow */,
 				95F0F8F71550F4FC00276F9D /* FlashFlowTests */,
 				95F0F8D81550F4FC00276F9D /* Frameworks */,
@@ -109,6 +121,11 @@
 				95F0F8E81550F4FC00276F9D /* BBJAppDelegate.h */,
 				95F0F8E91550F4FC00276F9D /* BBJAppDelegate.m */,
 				95F0F8E01550F4FC00276F9D /* Supporting Files */,
+				95F0F9081550F52B00276F9D /* Storyboard.storyboard */,
+				95F0F90C1550F8FA00276F9D /* FFMainViewController.h */,
+				95F0F90D1550F8FA00276F9D /* FFMainViewController.m */,
+				95F0F90F1550FC4B00276F9D /* BBJLocationManager.h */,
+				95F0F9101550FC4B00276F9D /* BBJLocationManager.m */,
 			);
 			path = FlashFlow;
 			sourceTree = "<group>";
@@ -215,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F0F8E41550F4FC00276F9D /* InfoPlist.strings in Resources */,
+				95F0F9091550F52B00276F9D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +269,8 @@
 			files = (
 				95F0F8E61550F4FC00276F9D /* main.m in Sources */,
 				95F0F8EA1550F4FC00276F9D /* BBJAppDelegate.m in Sources */,
+				95F0F90E1550F8FA00276F9D /* FFMainViewController.m in Sources */,
+				95F0F9111550FC4B00276F9D /* BBJLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
