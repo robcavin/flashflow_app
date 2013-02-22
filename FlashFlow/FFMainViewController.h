@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BBJLocationManager.h"
 
-@interface FFMainViewController : UIViewController <CLLocationManagerDelegate,UIScrollViewDelegate> {
-}
+@interface FFMainViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate> 
 
 @property (strong,nonatomic) UIImageView* left;
 @property (strong,nonatomic) UIImageView* center;

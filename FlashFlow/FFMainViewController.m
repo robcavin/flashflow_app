@@ -38,6 +38,9 @@
     scrollOrigin.x += self.view.frame.size.width;
     self.scrollView.contentSize = self.contentView.frame.size;
     self.scrollView.contentOffset = self.contentView.frame.origin;
+    
+    [self uploadImage];
+    
     [[BBJLocationManager sharedManager] startUpdatingLocation];
     
     // XXX
@@ -76,6 +79,96 @@
     right = [[UIImageView alloc] initWithFrame:rightFrame];
     right.image = right_image;
     [self.contentView addSubview:right];
+}
+
+- (void) uploadImage {
+    
+    NSHTTPURLResponse* response2 = nil;
+    NSData *returnData2 = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.104:8080/"]] returningResponse:&response2 error:nil];
+    NSString* returnString2 = [[NSString alloc] initWithData:returnData2 encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", returnString2);
+    NSLog(@"%@",[response2 allHeaderFields]);
+    
+    NSMutableURLRequest* request1= [[NSMutableURLRequest alloc] init];
+    [request1 setURL:[NSURL URLWithString:@"http://192.168.1.104:8080/login/"]];
+    [request1 setHTTPMethod:@"POST"];
+
+    NSArray* all = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+    NSString* csrfValue = nil;
+    for (NSHTTPCookie* cookie in all) {
+        if ([cookie.name isEqualToString:@"csrftoken"]) {
+            csrfValue = cookie.value;
+        }
+    }
+    NSLog(@"%@", all);
+
+    NSString* postString = [NSString stringWithFormat:@"username=robcavin&password=franz51Rein&csrfmiddlewaretoken=%@",csrfValue];
+    [request1 setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSHTTPURLResponse* response = nil;
+    NSData *returnData1 = [NSURLConnection sendSynchronousRequest:request1 returningResponse:&response error:nil];
+    NSString* returnString1 = [[NSString alloc] initWithData:returnData1 encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", returnString1);
+    NSLog(@"%@",[response allHeaderFields]);
+    
+    
+    NSString *urlString = @"http://192.168.1.104:8080/image/upload/";
+    NSString *filename = @"foo.jpg";
+    NSMutableURLRequest* request= [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = @"abcboundary123";
+    
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [request addValue:csrfValue forHTTPHeaderField:@"X-CSRFToken"];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    NSMutableData *postbody = [NSMutableData data];
+
+    /*[postbody appendData:[[NSString stringWithFormat:@"Content-Type: multipart/form-data; boundary=%@\r\n\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+*/
+    [postbody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postbody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"csrfmiddlewaretoken\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postbody appendData:[csrfValue dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postbody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postbody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"image\"; filename=\"%@\"\r\n", filename] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postbody appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSLog(@"%@",[[NSString alloc] initWithData:postbody encoding:NSUTF8StringEncoding]);
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"foo" ofType:@"jpg"];
+    NSData *imageData = [NSData dataWithContentsOfFile:filePath];
+    [postbody appendData:imageData];
+    [postbody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request setHTTPBody:postbody];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString* returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", returnString);
+}
+
+- (IBAction)pickImage:(id)sender {
+    UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self.view addSubview:imagePickerController.view];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker 
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    [picker dismissModalViewControllerAnimated:YES];
+    picker.view.hidden = YES;
+    picker = nil;
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

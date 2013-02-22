@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		957213E3168B860E0080C501 /* foo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 957213E2168B860E0080C501 /* foo.jpg */; };
 		95F0F8DA1550F4FC00276F9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F0F8D91550F4FC00276F9D /* UIKit.framework */; };
 		95F0F8DC1550F4FC00276F9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F0F8DB1550F4FC00276F9D /* Foundation.framework */; };
 		95F0F8DE1550F4FC00276F9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F0F8DD1550F4FC00276F9D /* CoreGraphics.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		957213E2168B860E0080C501 /* foo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foo.jpg; sourceTree = "<group>"; };
 		95F0F8D51550F4FC00276F9D /* FlashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F0F8D91550F4FC00276F9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95F0F8DB1550F4FC00276F9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +128,7 @@
 				95F0F90D1550F8FA00276F9D /* FFMainViewController.m */,
 				95F0F90F1550FC4B00276F9D /* BBJLocationManager.h */,
 				95F0F9101550FC4B00276F9D /* BBJLocationManager.m */,
+				957213E2168B860E0080C501 /* foo.jpg */,
 			);
 			path = FlashFlow;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				95F0F8E41550F4FC00276F9D /* InfoPlist.strings in Resources */,
 				95F0F9091550F52B00276F9D /* Storyboard.storyboard in Resources */,
+				957213E3168B860E0080C501 /* foo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +436,7 @@
 				95F0F9041550F4FC00276F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95F0F9051550F4FC00276F9D /* Build configuration list for PBXNativeTarget "FlashFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +445,7 @@
 				95F0F9071550F4FC00276F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
